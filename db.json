@@ -15,10 +15,6 @@
     {
       "day": 4,
       "id": 4
-    },
-    {
-      "day": 5,
-      "id": 5
     }
   ],
   "words": [
@@ -27,7 +23,7 @@
       "day": 1,
       "eng": "book",
       "kor": "책",
-      "isDone": true
+      "isDone": false
     },
     {
       "id": 3,
@@ -51,95 +47,46 @@
       "isDone": false
     },
     {
-      "day": 3,
+      "day": "3",
       "eng": "window",
       "kor": "창문",
       "isDone": false,
       "id": 7
     },
     {
-      "day": 3,
+      "day": "3",
       "eng": "house",
       "kor": "집",
       "isDone": false,
       "id": 8
     },
     {
-      "day": 4,
+      "day": "2",
+      "eng": "mouse",
+      "kor": "쥐",
+      "isDone": false,
+      "id": 9
+    },
+    {
+      "day": "4",
       "eng": "monkey",
       "kor": "원숭이",
       "isDone": false,
       "id": 10
     },
     {
-      "day": 4,
+      "day": "4",
       "eng": "apple",
       "kor": "사과",
       "isDone": false,
       "id": 11
     },
     {
-      "day": 3,
+      "day": "3",
       "eng": "apple",
       "kor": "사과",
       "isDone": false,
       "id": 12
-    },
-    {
-      "day": "1",
-      "eng": "zx",
-      "kor": "ㅋ",
-      "isDone": false,
-      "id": 13
-    },
-    {
-      "day": "1",
-      "eng": "ㄷㄹ",
-      "kor": "ㄷㄹ",
-      "isDone": false,
-      "id": 14
-    },
-    {
-      "day": "1",
-      "eng": "ㄱㄱ",
-      "kor": "ㄱㄱ",
-      "isDone": false,
-      "id": 15
-    },
-    {
-      "day": "1",
-      "eng": "ㅋㄴ",
-      "kor": "ㅋㄴ",
-      "isDone": false,
-      "id": 16
-    },
-    {
-      "day": "1",
-      "eng": "ㄷ",
-      "kor": "ㄷ",
-      "isDone": false,
-      "id": 17
-    },
-    {
-      "day": "3",
-      "eng": "ㅂ",
-      "kor": "ㅂ",
-      "isDone": false,
-      "id": 18
-    },
-    {
-      "day": "1",
-      "eng": "ㅋㄴ",
-      "kor": "ㅋㄴ",
-      "isDone": false,
-      "id": 19
-    },
-    {
-      "day": "1",
-      "eng": "ㅋㅋ",
-      "kor": "ㅋㅋㅋㅋ",
-      "isDone": false,
-      "id": 20
     }
   ]
 }
