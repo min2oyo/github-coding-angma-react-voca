@@ -1,38 +1,45 @@
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
+import { IDay } from "./DayList";
 
 const CreateWord = () => {
 
   // 변수
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
-  const days = useFetch(`http://localhost:3001/days`);
-  const dayRef = useRef(null);
-  const engRef = useRef(null);
-  const korRef = useRef(null);
+  const days: IDay[] = useFetch(`http://localhost:3001/days`);
+  const dayRef = useRef<HTMLSelectElement>(null);
+  const engRef = useRef<HTMLInputElement>(null);
+  const korRef = useRef<HTMLInputElement>(null);
+
 
   // 함수
-  const onSubmit = e => {
+  const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!isLoading) {
+    if (!isLoading && dayRef.current && engRef.current && korRef.current) {
       setIsLoading(true);
+
+      const day = dayRef.current.value;
+      const eng = engRef.current.value;
+      const kor = korRef.current.value;
+
       fetch(`http://localhost:3001/words/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          day: dayRef.current.value,
-          eng: engRef.current.value,
-          kor: korRef.current.value,
+          day,
+          eng,
+          kor,
           isDone: false,
         })
       }).then(res => {
         if (res.ok) {
           alert(`생성이 완료 되었습니다`);
-          navigate(`/day/${dayRef.current.value}`);
+          navigate(`/day/${day}`);
           setIsLoading(false);
         }
       });

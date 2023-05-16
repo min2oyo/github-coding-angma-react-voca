@@ -1,10 +1,15 @@
 import useFetch from '../hooks/useFetch';
 import { Link } from 'react-router-dom';
 
+export interface IDay {
+  id: number;
+  day: number;
+}
+
 const DayList = () => {
 
   // 변수
-  const days = useFetch(`http://localhost:3001/days`);
+  const days: IDay[] = useFetch(`http://localhost:3001/days`);
 
   // 렌더링
   if (!days.length) return <div>`Loading...`</div>;

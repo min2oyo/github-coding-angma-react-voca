@@ -1,6 +1,18 @@
 import { useState } from 'react';
 
-const Word = ({ word: props }) => {
+export interface IWord {
+  id: number;
+  day: string;
+  eng: string;
+  kor: string;
+  isDone: boolean;
+}
+
+interface IProps {
+  word: IWord;
+}
+
+const Word = ({ word: props }: IProps) => {
 
   // 변수
   const [word, setWord] = useState(props);
@@ -55,6 +67,7 @@ const Word = ({ word: props }) => {
       </td>
     </tr>
   );
+
 };
 
 export default Word;
