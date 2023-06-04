@@ -1,18 +1,7 @@
 import { useState } from 'react';
+import { Iprops } from '../../model/type';
 
-export interface IWord {
-  id: number;
-  day: string;
-  eng: string;
-  kor: string;
-  isDone: boolean;
-}
-
-interface IProps {
-  word: IWord;
-}
-
-const Word = ({ word: props }: IProps) => {
+const Word = ({ word: props }: Iprops) => {
 
   // 변수
   const [word, setWord] = useState(props);
@@ -57,13 +46,14 @@ const Word = ({ word: props }: IProps) => {
   return (
     <tr className={isDone ? `off` : `on`}>
       <td>
-        <input type="checkbox" checked={isDone} onChange={() => toggleDone()} />
+        <label htmlFor="checkWord">{ }</label>
+        <input id="checkWord" type="checkbox" checked={isDone} onChange={() => toggleDone()} />
       </td>
       <td>{word.eng}</td>
       <td>{isShow && word.kor}</td>
       <td>
-        <button onClick={toggleShow}>뜻 {isShow ? `숨기기` : `보기`}</button>
-        <button onClick={del} className='btn_del'>삭제</button>
+        <button type='button' onClick={toggleShow}>뜻 {isShow ? `숨기기` : `보기`}</button>
+        <button type='button' className='btn_del' onClick={del}>삭제</button>
       </td>
     </tr>
   );

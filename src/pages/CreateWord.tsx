@@ -1,14 +1,14 @@
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Iday } from "../model/type";
 import useFetch from "../hooks/useFetch";
-import { IDay } from "./DayList";
 
 const CreateWord = () => {
 
   // 변수
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
-  const days: IDay[] = useFetch(`http://localhost:3001/days`);
+  const days: Iday[] = useFetch(`http://localhost:3001/days`);
   const dayRef = useRef<HTMLSelectElement>(null);
   const engRef = useRef<HTMLInputElement>(null);
   const korRef = useRef<HTMLInputElement>(null);
@@ -18,10 +18,10 @@ const CreateWord = () => {
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!isLoading && dayRef.current && engRef.current && korRef.current) {
+    if (!isLoading && dayRef.current && engRef.current?.value && korRef.current?.value) {
       setIsLoading(true);
 
-      const day = dayRef.current.value;
+      const day = Number(dayRef.current.value);
       const eng = engRef.current.value;
       const kor = korRef.current.value;
 
@@ -43,6 +43,8 @@ const CreateWord = () => {
           setIsLoading(false);
         }
       });
+    } else {
+      alert(`빈칸이 있는지 확인해주세요`);
     }
 
   };
@@ -59,8 +61,8 @@ const CreateWord = () => {
         <input type="text" placeholder="컴퓨터" ref={korRef} />
       </div>
       <div className="input_area">
-        <label>Day</label>
-        <select ref={dayRef}>
+        <label htmlFor="days">Day</label>
+        <select id="days" ref={dayRef}>
           {days.map(day =>
             <option key={day.id} value={day.day}>
               {day.day}
@@ -68,7 +70,7 @@ const CreateWord = () => {
           )}
         </select>
       </div>
-      <button style={{ opacity: isLoading ? 0.3 : 1 }}>
+      <button type="submit" className={isLoading ? `is-loading` : ``}>
         {isLoading ? `Saving...` : `저장`}
       </button>
     </form >

@@ -131,3 +131,7 @@ button {
   height: 40px;
   font-size: 20px;
 }
+
+.is-loading {
+  opacity: 0.3;
+}
