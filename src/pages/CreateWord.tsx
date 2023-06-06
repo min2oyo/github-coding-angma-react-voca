@@ -5,7 +5,6 @@ import useFetch from "../hooks/useFetch";
 
 const CreateWord = () => {
 
-  // 변수
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   const days: Iday[] = useFetch(`http://localhost:3001/days`);
@@ -14,7 +13,6 @@ const CreateWord = () => {
   const korRef = useRef<HTMLInputElement>(null);
 
 
-  // 함수
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -49,7 +47,6 @@ const CreateWord = () => {
 
   };
 
-  // 렌더링
   return (
     <form onSubmit={onSubmit}>
       <div className="input_area">

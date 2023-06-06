@@ -3,12 +3,10 @@ import { Iprops } from '../../model/type';
 
 const Word = ({ word: props }: Iprops) => {
 
-  // 변수
   const [word, setWord] = useState(props);
   const [isShow, setIsShow] = useState(false);
   const [isDone, setIsDone] = useState(word.isDone);
 
-  // 함수
   const toggleShow = () => setIsShow(!isShow);
 
   const toggleDone = () => {
@@ -41,7 +39,6 @@ const Word = ({ word: props }: Iprops) => {
     }
   };
 
-  // 렌더링
   if (!word.id) return null;
   return (
     <tr className={isDone ? `off` : `on`}>

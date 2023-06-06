@@ -3,11 +3,9 @@ import useFetch from "../hooks/useFetch";
 
 const CreateDay = () => {
 
-  // 변수
   const days = useFetch(`http://localhost:3001/days`);
   const navigate = useNavigate();
 
-  // 함수
   const addDay = () => {
     fetch(`http://localhost:3001/days/`, {
       method: "POST",
@@ -25,7 +23,6 @@ const CreateDay = () => {
     });
   };
 
-  // 렌더링
   return (
     <div>
       <h3>현재 일수: {days.length}일</h3>

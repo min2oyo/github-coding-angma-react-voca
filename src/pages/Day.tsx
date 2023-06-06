@@ -5,11 +5,9 @@ import useFetch from '../hooks/useFetch';
 
 const Day = () => {
 
-  // 변수
   const { day } = useParams<{ day: string; }>(); // 이게 정석?
   const words: Iword[] = useFetch(`http://localhost:3001/words?day=${day}`);
 
-  // 렌더링
   return (
     <div className='day'>
       <h2>Day {day}</h2>

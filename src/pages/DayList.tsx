@@ -4,10 +4,8 @@ import { Iday } from '../model/type';
 
 const DayList = () => {
 
-  // 변수
   const days: Iday[] = useFetch(`http://localhost:3001/days`);
 
-  // 렌더링
   if (!days.length) return <div>`Loading...`</div>;
   return (
     <div className='dayList'>
