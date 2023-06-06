@@ -13,7 +13,7 @@ const Word = ({ word: props }: Iprops) => {
     fetch(`http://localhost:3001/words/${word.id}`, {
       method: "PUT",
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/json;charset=utf-8",
       },
       body: JSON.stringify({
         ...word,

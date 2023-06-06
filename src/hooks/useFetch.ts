@@ -5,9 +5,12 @@ const useFetch = (url: string) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch(url)
-      .then(res => res.json())
-      .then(res => setData(res));
+    fetch(url, {
+      method: 'GET',
+    }).then(res => {
+      if (res.ok) return res.json();
+      throw new Error(`통신 실패`);
+    }).then(res => setData(res));
   }, [url]);
 
   return data;

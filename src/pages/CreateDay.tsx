@@ -10,7 +10,7 @@ const CreateDay = () => {
     fetch(`http://localhost:3001/days/`, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/json;charset=utf-8",
       },
       body: JSON.stringify({
         day: days.length + 1,
