@@ -1,5 +1,9 @@
 import { useState } from 'react';
-import { Iprops } from '../../model/type';
+import { Iword } from '../../model/type';
+
+interface Iprops {
+  word: Iword;
+}
 
 const Word = ({ word: props }: Iprops) => {
 

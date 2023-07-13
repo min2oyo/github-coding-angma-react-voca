@@ -10,7 +10,3 @@ export interface Iword {
   kor: string;
   isDone: boolean;
 }
-
-export interface Iprops {
-  word: Iword;
-}
